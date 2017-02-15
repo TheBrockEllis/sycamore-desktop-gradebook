@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row wrap>
+      <ion-col width-25 *ngFor='let classroom of classrooms'>
+        <ion-card>
+          <div class="class-background" [style.backgroundColor]='classroom.color'>
+            <img [src]='classroom.image'>
+          </div>
+          <ion-card-content>
+            <ion-card-title>
+              {{ classroom.title }}
+            </ion-card-title>
+            <p> {{ classroom.description }} </p>
+          </ion-card-content>
+
+          <ion-row class="class-links" center>
+            <ion-col>
+              <button ion-button clear small (click)='navigateToGrades(classroom)'>
+                Grades
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button clear small (click)='navigateToAttendance(classroom)'>
+                Attendance
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button clear small (click)='navigateToRoster(classroom)'>
+                Roster
+              </button>
+            </ion-col>
+          </ion-row>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
