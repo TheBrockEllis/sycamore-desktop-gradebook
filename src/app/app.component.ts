@@ -14,7 +14,7 @@ export class MyApp {
   me:Object = {
     first: "Brock",
     last: "Ellis",
-    profile: "http://www.lorempixel.com/200/200/people",
+    profile: "http://www.lorempixel.com/100/100/people",
     school: "Tri-County District School"
   }
 
@@ -26,6 +26,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: Dashboard, icon: 'analytics'  },
+      { title: 'Classes', component: '', icon: 'list' },
       { title: 'Calendar', component: Dashboard, icon: 'calendar' },
       { title: 'Settings', component: Dashboard, icon: 'cog' },
       { title: 'Logout', component: Dashboard, icon: 'log-out' }

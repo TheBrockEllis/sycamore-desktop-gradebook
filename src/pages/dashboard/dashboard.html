@@ -11,8 +11,8 @@
 
   <ion-grid>
     <ion-row wrap>
-      <ion-col width-25 *ngFor='let classroom of classrooms'>
-        <ion-card>
+      <ion-col *ngFor='let classroom of classrooms'>
+        <ion-card (click)="viewClass(classroom)" tappable>
           <div class="class-background" [style.backgroundColor]='classroom.color'>
             <img [src]='classroom.image'>
           </div>
@@ -25,19 +25,9 @@
 
           <ion-row class="class-links" center>
             <ion-col>
-              <button ion-button clear small (click)='navigateToGrades(classroom)'>
-                Grades
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button clear small (click)='navigateToAttendance(classroom)'>
-                Attendance
-              </button>
-            </ion-col>
-            <ion-col>
-              <button ion-button clear small (click)='navigateToRoster(classroom)'>
-                Roster
-              </button>
+              <button ion-button clear small (click)='navigateToRoster($event, classroom)'>Roster</button>
+              <button ion-button clear small (click)='navigateToGrades($event, classroom)'>Grades</button>
+              <button ion-button clear small (click)='navigateToAttendance($event, classroom)'>Attendance</button>
             </ion-col>
           </ion-row>
 

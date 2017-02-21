@@ -1,4 +1,15 @@
 dashboard {
+  ion-col {
+    flex-grow: 1 !important;
+    min-width: 200px !important;
+    max-width: 25% !important;
+    flex-basis: 200px !important;
+  }
+
+  ion-card {
+    min-width: 200px;
+  }
+
   .class-background {
     position: relative;
     height: 100px;
@@ -19,7 +30,7 @@ dashboard {
   }
 
   .class-links {
-    justify-content: space-between;
+    text-align: center;
   }
 
 }

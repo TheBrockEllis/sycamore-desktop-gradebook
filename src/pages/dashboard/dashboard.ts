@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, MenuController } from 'ionic-angular';
 
-import { Grades } from '../grades/grades';
-import { Attendance } from '../attendance/attendance';
-import { Roster } from '../roster/roster';
+import { ClassHome } from '../class-home/class-home';
 
 @Component({
   selector: 'dashboard',
@@ -19,7 +17,7 @@ export class Dashboard {
       description: "A fine classroom teaching amazing things",
       section: '1A',
       homeroom: true,
-      color: "#b23"
+      color: "#9400D3"
     },
     {
       id: 2,
@@ -28,7 +26,7 @@ export class Dashboard {
       description: "A fine classroom teaching amazing things",
       section: '1A',
       homeroom: true,
-      color: "#D00"
+      color: "#4B0082"
     },
     {
       id: 3,
@@ -37,7 +35,7 @@ export class Dashboard {
       description: "A fine classroom teaching amazing things",
       section: '1A',
       homeroom: true,
-      color: '#a01'
+      color: '#0000FF'
     },
     {
       id: 4,
@@ -46,7 +44,7 @@ export class Dashboard {
       description: "A fine classroom teaching amazing things",
       section: '1A',
       homeroom: true,
-      color: '#F1A'
+      color: '#00FF00'
     },
     {
       id: 5,
@@ -55,7 +53,7 @@ export class Dashboard {
       description: "A fine classroom teaching amazing things",
       section: '1A',
       homeroom: true,
-      color: '#B0B'
+      color: '#FFFF00'
     },
     {
       id: 6,
@@ -64,25 +62,44 @@ export class Dashboard {
       description: "A fine classroom teaching amazing things",
       section: '1A',
       homeroom: true,
-      color: '#D1C'
+      color: '#FF7F00'
     },
-
+    {
+      id: 7,
+      title: "Class Seven",
+      image: "http://www.lorempixel.com/200/200/sports",
+      description: "A fine classroom teaching amazing things",
+      section: '1A',
+      homeroom: true,
+      color: '#FF0000'
+    }
   ]
 
   constructor(public navCtrl: NavController, public menuCtrl:MenuController) {
-    //this.menuCtrl.open('left');
   }
 
-  navigateToAttendance(classroom){
-    this.navCtrl.push(Attendance, { classroom: classroom })
+  /*
+   * $event.stopPropagation() is needed because the buttons are nested inside
+   * of a card that can ALSO be clicked on to take them to the ClassHome
+   */
+  navigateToRoster($event, classroom){
+    $event.stopPropagation();
+    this.navCtrl.push(ClassHome, { tab: 0, classroom: classroom });
   }
 
-  navigateToRoster(classroom){
-    this.navCtrl.push(Roster, { classroom: classroom })
+  navigateToGrades($event, classroom){
+    $event.stopPropagation();
+    this.navCtrl.push(ClassHome, { tab: 1, classroom: classroom });
   }
 
-  navigateToGrades(classroom){
-    this.navCtrl.push(Grades, { classroom: classroom })
+  navigateToAttendance($event, classroom){
+    $event.stopPropagation();
+    this.navCtrl.push(ClassHome, { tab: 2, classroom: classroom });
+  }
+
+  viewClass(classroom){
+    //console.log("Trying to view class: ", classroom);
+    this.navCtrl.push(ClassHome, { classroom: classroom });
   }
 
 }

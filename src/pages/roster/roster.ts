@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams } from 'ionic-angular';
 
+import { Dashboard } from '../dashboard/dashboard';
 /*
   Generated class for the Roster page.
 
@@ -13,10 +14,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class Roster {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public app:App, public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RosterPage');
+  }
+
+  navigateToDashboard(){
+    this.app.getRootNav().setRoot(Dashboard);
   }
 
 }

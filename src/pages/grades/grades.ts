@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Grades page.
+import { Dashboard } from '../dashboard/dashboard';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-grades',
   templateUrl: 'grades.html'
 })
 export class Grades {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public app:App, public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GradesPage');
   }
 
+  navigateToDashboard(){
+    this.app.getRootNav().setRoot(Dashboard);
+  }
 }

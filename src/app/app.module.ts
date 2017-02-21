@@ -17,7 +17,15 @@ import { Roster } from '../pages/roster/roster';
     Roster
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+       backButtonText: 'Back',
+       modalEnter: 'modal-slide-in',
+       modalLeave: 'modal-slide-out',
+       tabsPlacement: 'bottom',
+       tabsHighlight: true,
+       tabsHideOnSubPages: true
+     }, {}
+   )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
