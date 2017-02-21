@@ -20,49 +20,6 @@ export class ClassHome {
   tab2: any;
   tab3: any;
   public tab:number = 1;
-  public students:any = [
-    {
-      "ID": "267278",
-      "Code": "BAG1460-5",
-      "ClassNumber": "0",
-      "FirstName": "Flower",
-      "LastName": "Baggins",
-      "NickName": "tex"
-    },
-    {
-      "ID": "493423",
-      "Code": "CLA1536-6",
-      "ClassNumber": "0",
-      "FirstName": "Sam",
-      "LastName": "Clark",
-      "NickName": ""
-    },
-    {
-      "ID": "614085",
-      "Code": "ELL1727-1",
-      "ClassNumber": "0",
-      "FirstName": "Ansleigh",
-      "LastName": "Ellis",
-      "NickName": ""
-    },
-    {
-      "ID": "446",
-      "Code": "SAF1088-1",
-      "ClassNumber": "0",
-      "FirstName": "Alfred",
-      "LastName": "Saferite",
-      "NickName": ""
-    },
-    {
-      "ID": "89356",
-      "Code": "BAL1100-6",
-      "ClassNumber": "0",
-      "FirstName": "Sam",
-      "LastName": "Wombat",
-      "NickName": ""
-    }
-  ];
-
   public classroom:any = {
     "ID": "58418",
     "SharedClassID": "0",

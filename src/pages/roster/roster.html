@@ -11,4 +11,25 @@
 
 <ion-content padding>
 
+  <ion-grid>
+    <ion-row class="table-header">
+      <ion-col width-20>#</ion-col>
+      <ion-col width-20>Code</ion-col>
+      <ion-col width-50>Name</ion-col>
+      <ion-col width-10></ion-col>
+    </ion-row>
+
+    <ion-row *ngFor='let student of students'>
+      <ion-col width-20> {{ student.ClassNumber }}</ion-col>
+      <ion-col width-20> {{ student.Code }}</ion-col>
+      <ion-col width-50>
+        {{ student.FirstName }} {{ student.LastName }}
+        <span *ngIf='student.NickName'>- "{{ student.NickName }}"</span>
+      </ion-col>
+      <ion-col width-10>
+        <button ion-button (click)="viewStudent(student)">Details</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

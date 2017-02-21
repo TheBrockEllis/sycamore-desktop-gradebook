@@ -6,6 +6,7 @@ import { ClassHome } from '../pages/class-home/class-home';
 import { Grades } from '../pages/grades/grades';
 import { Attendance } from '../pages/attendance/attendance';
 import { Roster } from '../pages/roster/roster';
+import { StudentModal } from '../pages/student/student';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { Roster } from '../pages/roster/roster';
     ClassHome,
     Grades,
     Attendance,
-    Roster
+    Roster,
+    StudentModal
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -34,7 +36,8 @@ import { Roster } from '../pages/roster/roster';
     ClassHome,
     Grades,
     Attendance,
-    Roster
+    Roster,
+    StudentModal
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -45,3 +45,7 @@
 #menu-profile img {
   border-radius: 100px;
 }
+
+.tab-button[aria-selected=true] {
+  // color: map-get($colors, "dark") !important;
+}
